@@ -1,0 +1,93 @@
+@import "tailwindcss";
+
+@theme inline {
+  --color-obsidian: #111111;
+  --color-gold: #C6A66B;
+  --color-gold-light: #DFC48C;
+  --color-ivory: #F4EFE5;
+  --color-espresso: #39332D;
+
+  --font-serif: var(--font-playfair), Georgia, serif;
+  --font-sans: var(--font-inter), system-ui, sans-serif;
+}
+
+@layer base {
+  html {
+    background-color: #111111;
+    color: #F4EFE5;
+    font-family: var(--font-inter), system-ui, sans-serif;
+    overflow-x: clip;
+    scroll-behavior: smooth;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  body {
+    background-color: #111111;
+    color: #F4EFE5;
+    overflow-x: clip;
+    min-height: 100dvh;
+  }
+
+  ::selection {
+    background-color: #C6A66B;
+    color: #111111;
+  }
+
+  h1, h2, h3, h4, .font-editorial {
+    font-family: var(--font-playfair), Georgia, serif;
+  }
+
+  /* Bouncy Spring Feel for All Buttons & CTA Links */
+  button,
+  a[href="/reservation"],
+  a[href="/menu"] {
+    touch-action: manipulation;
+    transition:
+      transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1),
+      background-color 0.3s ease,
+      border-color 0.3s ease,
+      color 0.3s ease,
+      box-shadow 0.35s ease;
+  }
+
+  @media (hover: hover) {
+    button:hover,
+    a[href="/reservation"]:hover,
+    a[href="/menu"]:hover {
+      transform: translateY(-4px) scale(1.025);
+      box-shadow: 0 12px 28px -8px rgba(198, 166, 107, 0.28);
+    }
+  }
+
+  button:active,
+  a[href="/reservation"]:active,
+  a[href="/menu"]:active {
+    transform: translateY(0px) scale(0.97);
+  }
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #111111;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #39332D;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #C6A66B;
+}
+
+.gold-divider {
+  background: linear-gradient(
+    90deg,
+    rgba(198, 166, 107, 0) 0%,
+    rgba(198, 166, 107, 0.55) 50%,
+    rgba(198, 166, 107, 0) 100%
+  );
+}
